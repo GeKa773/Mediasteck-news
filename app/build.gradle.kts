@@ -21,6 +21,16 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+//    signingConfigs {
+//
+//        getByName("release") {
+//            keyAlias = "MediasteckNews"
+//            keyPassword = "123321Ge981Ka"
+//            storeFile = file("app/keystore.jks")
+//            storePassword = "123321Ge981Ka"
+//        }
+//    }
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -39,6 +49,7 @@ android {
 
     buildFeatures {
         viewBinding = true
+        dataBinding = true
     }
 
     //Избегание включения инфраструктуры отладки в результирующий APK
@@ -107,7 +118,7 @@ dependencies {
 }
 
 //navigation
-dependencies{
+dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 }
