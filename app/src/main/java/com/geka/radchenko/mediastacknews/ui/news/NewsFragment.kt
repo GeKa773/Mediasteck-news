@@ -12,30 +12,16 @@ import com.geka.radchenko.mediastacknews.ui.news.viewmodel.NewsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class NewsFragment : BaseFragment(R.layout.news_fragment) {
+class NewsFragment :
+    BaseFragment<NewsFragmentBinding>(R.layout.news_fragment, NewsFragmentBinding::inflate) {
     private val TAG by lazy { javaClass.simpleName }
     private val viewModel by lazy {
         ViewModelProvider(this)[NewsViewModel::class.java]
     }
-    private var _binding: NewsFragmentBinding? = null
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        _binding = NewsFragmentBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
 
 
     }
