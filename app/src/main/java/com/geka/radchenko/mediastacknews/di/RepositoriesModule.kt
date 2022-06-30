@@ -20,8 +20,12 @@ object RepositoriesModule {
 
     @Provides
     @Singleton
-    fun provideRepository(dataBase: DataBase, preferencesManager: PreferencesManager): Repository {
-        return Repository(dataBase, preferencesManager)
+    fun provideRepository(
+        api: Api,
+        dataBase: DataBase,
+        preferencesManager: PreferencesManager
+    ): Repository {
+        return Repository(api, dataBase, preferencesManager)
     }
 
     @Provides

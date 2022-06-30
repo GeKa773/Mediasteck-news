@@ -31,6 +31,8 @@ android {
 //        }
 //    }
 
+    val baseUrl: String = "\"http://api.mediastack.com/v1/\""
+
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
@@ -38,6 +40,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "BASE_URL", baseUrl)
+        }
+
+        getByName("debug") {
+            buildConfigField("String", "BASE_URL", baseUrl)
+
         }
 
     }

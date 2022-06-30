@@ -10,7 +10,7 @@ import javax.inject.Singleton
 @Singleton
 class Repository
 @Inject constructor(
-//    private val api: Api,
+    private val api: Api,
     private val dataBase: DataBase,
     private val prefs: PreferencesManager
 ) {
