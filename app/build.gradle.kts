@@ -32,6 +32,7 @@ android {
 //    }
 
     val baseUrl: String = "\"http://api.mediastack.com/v1/\""
+    val apiAccessKey: String = "\"ebb08a804b724be86fdf1154e8e16c7e\""
 
     buildTypes {
         getByName("release") {
@@ -41,10 +42,12 @@ android {
                 "proguard-rules.pro"
             )
             buildConfigField("String", "BASE_URL", baseUrl)
+            buildConfigField("String", "API_ACCESS_KEY", apiAccessKey)
         }
 
         getByName("debug") {
             buildConfigField("String", "BASE_URL", baseUrl)
+            buildConfigField("String", "API_ACCESS_KEY", apiAccessKey)
 
         }
 
